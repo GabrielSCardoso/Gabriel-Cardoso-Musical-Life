@@ -1,0 +1,95 @@
+form {
+    background-color: white;
+
+    margin: auto;
+    padding: 116px 64px;
+
+    border-radius: 8px;
+
+    max-width: 730px;
+}
+
+form h1 {
+    font-size: 36px;
+
+    text-align: center;
+}
+
+form fieldset {
+    margin-top: 64px;
+
+    border: 0;
+}
+
+
+form legend {
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+form .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+}
+
+form .field-group {
+    display: flex;
+}
+
+
+form input,
+form select {
+    background-color: #bbf1ff;
+
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+
+    border-radius: 8px;
+
+    /* outline: none; */
+}
+
+form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label {
+    margin: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+form .field-group .field+.field {
+    margin-left: 24px;
+}
+
+form button {
+    width: 260px;
+    height: 56px;
+
+    background-color: var(--primary-title);
+    border-radius: 8px;
+
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 0;
+    margin-top: 40px;
+
+    transition: 400ms;
+    cursor: pointer;
+}

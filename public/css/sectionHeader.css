@@ -1,0 +1,111 @@
+header {
+    padding: 0 60px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.876);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.377);
+    position: fixed;
+    z-index: 999;
+}
+
+header ul {
+    display: flex;
+    float: right;
+}
+
+header ul li {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.home-cor a {
+    background: var(--primary-title);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-cor a:hover {
+    background: #00d2ff;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header ul li a {
+    background: #00d2ff;
+    background: -webkit-linear-gradient(to right, #00d2ff, #3a7bd5);
+    background: linear-gradient(to right, #00d2ff, #3a7bd5);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+    font-weight: bold;
+    text-transform: uppercase;
+
+    display: block;
+
+    padding: 5px 10px;
+    margin: 25px 5px;
+}
+
+header ul li a:hover {
+    background: var(--primary-title);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon-header .fa-instagram::before {
+    color: var(--primary-title);
+}
+
+.icon-header .fa-github::before {
+    color: var(--primary-title);
+}
+
+header ul span {
+    margin: 28px 5px;
+
+    font-size: 25px;
+}
+
+header .logo img {
+    margin: 5px;
+    width: 240px;
+}
+
+.primarySection {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(0, 0, 0);
+}
+
+.primarySection video {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* pointer-events: none; */
+
+    filter: brightness(60%) blur(3px);
+}
+
+.primarySection .read {
+    width: 85%;
+
+    z-index: 1;
+}
+
+.primarySection .read p {
+    margin-top: 7%;
+
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px black;
+
+}

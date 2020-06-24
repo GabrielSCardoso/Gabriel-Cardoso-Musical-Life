@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Efetue o Login</title>
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/scroll-progress.css">
+
+        <link rel="stylesheet" href="css/page-register.css">
+
+        <link rel="stylesheet" href="css/sectionHeader.css">
+        <link rel="stylesheet" href="css/footer.css">
+    </head>
+
+    <body>
+
+        <!-- Scroll Progress  -->
+        <div id="progressBar"></div>
+        <div id="scrollPath"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="logo"><img src="img/logo-gradiente/logo-principal.png" alt="GC logo"></a>
+            <ul class="active">
+                <!-- <li class="int-link home-cor"><a href="index.html">Home</a></li> -->
+                <span class="icon-header"><a href="https://github.com/GabrielCardoso2019"><i
+                            class="fab fa-instagram"></i></a></span>
+                <span class="icon-header"><a href="https://www.instagram.com/biel.cardoso7/"><i
+                            class="fab fa-github"></i></a></span>
+            </ul>
+        </header>
+
+        <!-- Login -->
+        <form id="form_login" method="post" onsubmit="return entrar()" id="home">
+            <h1>Efetue seu Login</h1>
+
+            <fieldset>
+                <legend>
+                    <h2>Digite seus Dados</h2>
+                </legend>
+
+                <div class="field">
+                    <label for="nickname">NickName</label>
+                    <input type="text" name="login" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Senha</label>
+                    <input type="password" name="senha" required>
+                </div>
+            </fieldset>
+
+            <button type="submit" onclick="window.location.href='page-register.html'">Voltar</button>
+            <button type="submit" id="btn_entrar">Entrar</button>
+        </form>
+
+        <!-- Footer  -->
+        <div class="footer-main-div">
+            <div class="footer-social-icons">
+                <h1>Redes Sociais</h1>
+                <ul>
+                    <li><a href="https://www.instagram.com/biel.cardoso7/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/GabrielCardoso2019"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/gabriel-cardoso-991a15154/"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://discord.com/channels/682915649957396491/682915768018665492"><i class="fab fa-discord"></i></a></li>
+                    <li><a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-menu-one">
+                <ul>
+                    <li><a href="https://medium.com/@bananasmusic/os-micro-momentos-da-m%C3%BAsica-dad9055cd6b7"
+                            target="_blank">A MÚSICA PODE MUDAR O MUNDO, PORQUE PODE MUDAR AS PESSOAS.<br>(Bono
+                            Vox)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; Copyright GC Gabriel Cardoso. Musical Life 2020.
+        </div>
+
+    </body>
+
+</html>
+
+<script>
+    function entrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+                    sessionStorage.login_usuario_meuapp = json.nickName;
+                    sessionStorage.nome_usuario_meuapp = json.nickName;
+
+                    window.location.href = './page-user.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                response.text().then(texto => {
+                    console.error(texto);
+                    // finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+</script>
+
+<script>
+    let progress = document.getElementById('progressBar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function () {
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%"
+    }
+</script>
+
+<script src="https://kit.fontawesome.com/26d639ee5e.js" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/function.js"></script>
+<script src="js/page-login.js"></script>

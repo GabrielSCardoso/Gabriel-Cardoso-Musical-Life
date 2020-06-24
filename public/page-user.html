@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página de Usuário</title>
+
+        <link rel="stylesheet" href="css/page-user.css">
+
+        <link rel="stylesheet" href="css/scroll-progress.css">
+        <script src="js/page-login.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Scroll Progress  -->
+        <!-- <div id="progressBar"></div>
+        <div id="scrollPath"></div> -->
+
+        <!-- Header -->
+        <section class="header-section">
+            <header class="header">
+                <a href="" class="user">User:&nbsp;<b id="b_usuario"></b></a>
+                <ul class="active">
+                    <li class="int-link"><a href="#home">Home</a></li>
+                    <li class="int-link"><a href="#ultimasMusicas">Últimas Musicas</a></li>
+                    <li class="int-link"><a href="#meusartistas">Meus Artistas</a></li>
+                    <li class="int-link"><a href="#noticias">Notícias</a></li>
+                    <!-- <li class="int-link"><a href="#minhaConta">Minha Conta</a></li> -->
+                    <span class="icon-exit"><a href="#" onclick="logoff()"><i class="fas fa-sign-out-alt"></i> Exit</a></span>
+                </ul>
+
+            </header>
+            <div class="container" id="home">
+                <div class="slider">
+                    <div class="slide slide1"></div>
+                    <div class="slide slide2"></div>
+                    <div class="slide slide3"></div>
+                    <div class="slide slide4"></div>
+                    <div class="slide slide5"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ultimasMusicas">
+            <h1>Músicas Ouvidas Recentemente</h1>
+            <div class="cards">
+                <div class="card g-1">
+                    <img src="img/iron-maiden.jpg" alt="" />
+                    <audio style="width: 100%;" id="sound" controls onvolumechange="">
+                        <source src="music/Iron-Maiden-The-Trooper(Official-Video).mp3" type="audio/mpeg">
+                    </audio>
+                    <h2>Iron Maiden - The Trooper</h2>
+
+                </div>
+                <div class="card g-1">
+                    <img src="img/romantic-divide.jpg" alt="" />
+                    <audio style="width: 100%;" id="sound" controls onvolumechange="">
+                        <source src="music/Ed-Sheeran-Perfect(Official Music Video).mp3" type="audio/mpeg">
+                    </audio>
+                    <h2>Ed Sheeran - Perfect </h2>
+                </div>
+                <div class="card g-1">
+                    <img src="img/7mz.jpg" alt="" />
+                    <audio style="width: 100%;" id="sound" controls onvolumechange="">
+                        <source src="music/Lucas-ART-Lágrimas-Serão-Sorrisos.mp3" type="audio/mpeg">
+                    </audio>
+                    <h2>7MZ - Lágrimas serão sorrisos</h2>
+                </div>
+                <div class="card g-2">
+                    <img src="img/Melody.jpg" alt="" />
+                    <audio style="width: 100%;" id="sound" controls onvolumechange="">
+                        <source src="music/Cadmium-Melody(feat. Jon Becker).mp3" type="audio/mpeg">
+                    </audio>
+                    <h2>Cadmium - Melody (feat. Jon Becker)</h2>
+                </div>
+                <div class="card g-2">
+                    <img src="img/a-vida-vai-trazer.jpg" alt="" />
+                    <audio style="width: 100%;" id="sound" controls onvolumechange="">
+                        <source src="music/Menor&Gaab-A-Vida-Vai-Trazer.mp3" type="audio/mpeg">
+                    </audio>
+                    <h2>Gaab - A vida vai trazer (feat. Menor)</h2>
+                </div>
+                <div class="card g-2">
+                    <img src="img/eu-juro.jpg" alt="" />
+                    <audio style="width: 100%;" id="sound" controls onvolumechange="">
+                        <source src="music/FERRUGEM-EU-JURO.mp3" type="audio/mpeg">
+                    </audio>
+                    <h2>Ferrugem - Eu juro</h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="meusartistas">
+            <h1>Meus Artistas</h1>
+            <div class="cards-artistas">
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-ferrugem.jpg" alt="" />
+                    <h2>Ferrugem</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-henrique-juliano.jpg" alt="" />
+                    <h2>Henrique & Juliano</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-guns-n-rose.jpeg" alt="" />
+                    <h2>Guns N'Rose</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-matheus-e-kauan.jpg" alt="" />
+                    <h2>Matheus & Kauan</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-post-malone.jpg" alt="" />
+                    <h2>Post Malone</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-marshmello.jpg" alt="" />
+                    <h2>Marshmello</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-chrishan.jpg" alt="" />
+                    <h2>Chrishan</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-panic-at-the-disco.jpg" alt="" />
+                    <h2>Panic! at the Disco</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-mc-livinho.jpg" alt="" />
+                    <h2>MC Livinho</h2>
+                </div>
+                <div class="card-art ca-1">
+                    <img src="img/artistas/at-vitao.jpg" alt="" />
+                    <h2>Vitão</h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="noticias">
+            <h1>Notícias do mundo da música</h1>
+            <div class="card-noticias">
+                <div class="cards-noticia ct-1">
+                    <img src="img/noticias/musica-quarentena.jpg" alt="" />
+                    <h2><a href="https://exame.com/marketing/pesquisa-o-que-os-brasileiros-escutam-na-quarentena-para-melhorar-o-humor/"
+                            target="_blank">Pesquisa:
+                            o que os brasileiros escutam na quarentena para melhorar o humor</a></h2>
+                </div>
+
+                <div class="cards-noticia ct-1">
+                    <img src="img/noticias/luan-santana.jpg" alt="" />
+                    <h2><a href="https://som13.com.br/noticias/luan-santana-lanca-musica-inedita-em-live-voce-ja-ouviu"
+                            target="_blank">Luan
+                            Santana lança música inédita em live. Você já ouviu?</a></h2>
+                </div>
+
+                <div class="cards-noticia ct-1">
+                    <img src="img/noticias/emicida.jpg" alt="" />
+                    <h2><a href="https://som13.com.br/noticias/emicida-lanca-clipe-de-ilustracao-para-alertar-sobre-o-trabalho-infantil"
+                            target="_blank">Emicida
+                            lança clipe de ilustração para alertar sobre o trabalho infantil</a></h2>
+                </div>
+            </div>
+
+            <div class="card-noticias">
+                <div class="cards-noticia ct-2">
+                    <img src="img/noticias/alcione-ludmila.jpg" alt="" />
+                    <h2><a href="https://www.vagalume.com.br/news/2020/06/18/alcione-defende-ludmilla-de-ofensas-racistas-mexeu-com-ela-mexeu-com-outra-mulher-preta-eu.html"
+                            target="_blank">Alcione
+                            defende Ludmilla de ataques racistas: "Mexeram com outra mulher preta: eu!"</a></h2>
+                </div>
+
+                <div class="cards-noticia ct-2">
+                    <img src="img/noticias/thiaguinho.jpg" alt="" />
+                    <h2><a href="https://www.vagalume.com.br/news/2020/06/18/thiaguinho-posta-mensagem-de-aniversario-para-a-ex-esposa-fernanda-souza-amo-voce.html"
+                            target="_blank">Thiaguinho
+                            faz post de aniversário para ex-esposa, Fernanda Souza: "Juntos até depois do fim"</a></h2>
+                </div>
+
+                <div class="cards-noticia ct-2">
+                    <img src="img/noticias/Pablo-Alborán.jpg" alt="" />
+                    <h2><a href="https://www.vagalume.com.br/news/2020/06/17/pablo-alboran-faz-revelacao-para-fas-sou-homossexual-e-tudo-bem.html"
+                            target="_blank">Pablo
+                            Alborán faz revelação para fãs: "Sou homossexual e tudo bem"</a></h2>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section contact">
+                    <h1>Contate-me</h1>
+                    <p>
+                        gabrielcardososs2016@hotmail.com <br>
+                        gabriel.csantos@bandtec.com.br <br>
+                        <br>
+                        +55 (11) 96275-4755
+                    </p>
+                </div>
+
+                <div class="footer-section image">
+                    <img src="img/logo-gradiente/logo-principal.png" alt="">
+                </div>
+
+                <div class="footer-section redes">
+                    <h1>Siga-me nas redes sociais</h1>
+                    <div class="rede">
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-discord"></i></a>
+                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a href=""><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; BandTec Digital School | Personal Project |
+                Developed and Designed by Gabriel Cardoso
+            </div>
+        </div>
+    </body>
+
+</html>
+
+<!-- <script type="text/javascript">
+    let progress = document.getElementById('progressBar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function () {
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%"
+    }
+</script> -->
+
+<script src="https://kit.fontawesome.com/26d639ee5e.js" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/function.js"></script>
+
+<script>
+    verificar_autenticacao();
+</script>

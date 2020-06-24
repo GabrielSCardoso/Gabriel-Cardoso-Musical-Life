@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro - Musical Life</title>
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/scroll-progress.css">
+
+        <link rel="stylesheet" href="css/page-register.css">
+
+        <link rel="stylesheet" href="css/sectionHeader.css">
+        <link rel="stylesheet" href="css/footer.css">
+    </head>
+
+    <body>
+
+        <!-- Scroll Progress  -->
+        <div id="progressBar"></div>
+        <div id="scrollPath"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="logo"><img src="img/logo-gradiente/logo-principal.png" alt="GC logo"></a>
+            <ul class="active">
+                <li class="int-link home-cor"><a href="#home">Home</a></li>
+                <li class="int-link"><a href="#mensagem">Mande-me um Mensagem</a></li>
+                <span class="icon-header"><a href="https://github.com/GabrielCardoso2019"><i
+                            class="fab fa-instagram"></i></a></span>
+                <span class="icon-header"><a href="https://www.instagram.com/biel.cardoso7/"><i
+                            class="fab fa-github"></i></a></span>
+            </ul>
+        </header>
+
+        <!-- Cadastro de usuário -->
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <h1>Cadastro de Usuário</h1>
+
+            <fieldset>
+                <legend>
+                    <h2>Digite seus Dados</h2>
+                </legend>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" name="nome" required>
+                    </div>
+                    <div class="field">
+                        <label for="nickname">NickName</label>
+                        <input type="text" name="login" required>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="seuemail@dominio.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="contato">Número de Contato</label>
+                        <input type="text" placeholder="(00) 90000-0000" name="contato" required>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="password">Senha</label>
+                        <input type="password" name="senha" minlength="5" maxlength="14" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Confirmar Senha</label>
+                        <input type="password" name="" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" id="btn_entrar">Cadastrar</button>
+            <button type="submit" onclick="window.location.href='page-login.html'" style="
+            margin-left: 49px;">Efetuar Login</button>
+        </form>
+
+        <form action="" id="mensagem">
+            <fieldset>
+                <legend>
+                    <h2>Mande-me uma Mensagem</h2>
+                </legend>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="nomesobrenome">Nome e Sobrenome:</label>
+                        <input type="text" id="nomesobrenome" class="input-padrao" required>
+
+                        <label for="emailmesage">E-mail:</label>
+                        <input type="email" id="email" placeholder="seuemail@dominio.com" class="input-padrao" required>
+
+                        <label for="telefonemesage">Telefone:</label>
+                        <input type="text" id="telefone" placeholder="(00) 90000-0000" class="input-padrao" required>
+
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" cols="30" rows="10" class="input-padrao" required></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" onclick="enviarMensagem()">Enviar Mensagem</button>
+        </form>
+
+        <!-- Footer  -->
+        <div class="footer-main-div">
+            <div class="footer-social-icons">
+                <h1>Redes Sociais</h1>
+                <ul>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href=""><i class="fab fa-discord"></i></a></li>
+                    <li><a href=""><i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-menu-one">
+                <ul>
+                    <li><a href="https://medium.com/@bananasmusic/os-micro-momentos-da-m%C3%BAsica-dad9055cd6b7"
+                            target="_blank">A MÚSICA PODE MUDAR O MUNDO, PORQUE PODE MUDAR AS PESSOAS.<br>(Bono
+                            Vox)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; Copyright GC Gabriel Cardoso. Musical Life 2020.
+        </div>
+
+    </body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                window.location.href = './page-login.html';
+            } else {
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    // div_erro.innerHTML = resposta;
+                    alert("Erro", resposta);
+                });
+            }
+        });
+
+        return false;
+    }
+</script>
+
+<script type="text/javascript">
+    let progress = document.getElementById('progressBar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function () {
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%"
+    }
+</script>
+
+<script src="https://kit.fontawesome.com/26d639ee5e.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="js/page-login.js"></script>
+
+<script type="text/javascript" src="js/mensage.js"></script>
+<script type="text/javascript" src="register.js"></script>
+<script type="text/javascript" src="js/main.js"></script>

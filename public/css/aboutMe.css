@@ -1,0 +1,58 @@
+/* .container-sobre {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.container-sobre .read .conteudo-left {
+    display: block;
+    float: left;
+}
+
+.container-sobre .read .conteudo-left img {
+    width: 415px;
+
+    margin: 13% 30%;
+
+    background: linear-gradient(to right, #00d2ff, #3a7bd5);
+
+    padding: 5px;
+}
+
+.container-sobre .read .conteudo-right {
+    display: block;
+
+    float: right;
+
+    width: 700px;
+
+    padding: 20px;
+
+    margin-top: 2%;
+    margin-right: 8%;
+}
+
+.container-sobre .read .conteudo-right h1 {
+    text-align: left;
+    font-size: 35px;
+
+    background-image: url(../img/logo-gradiente/gradiente3.PNG);
+    background-position: center;
+    background-size: cover;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container-sobre .read .conteudo-right p {
+    color: rgb(0, 0, 0);
+
+    background-color: rgb(233, 255, 255);
+
+    font-size: 14px;
+    font-weight: bolder;
+
+    text-align: justify;
+    
+    letter-spacing: 2px;
+}
